@@ -9,7 +9,7 @@ dotenv.config();
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://thanhlong123:thanhlong@cluster0.6vknj.mongodb.net/thanhlong123?retryWrites=true&w=majority",
+  process.env.MONGODB_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
