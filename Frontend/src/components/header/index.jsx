@@ -174,19 +174,21 @@ export default function Header() {
                     validationSchema={searchTermSchema}
                     onSubmit={handleOnSubmit}
                   >
-                    <Form className={classes.formiknew}>
-                      <Field
-                        type="text"
-                        name="search"
-                        placeholder="search..."
-                        className={classes.inputField}
-                      />
-                      <Button type="submit">
-                        <SearchOutlinedIcon color="secondary" />
-                      </Button>
-                    </Form>
+                    <Box display={{ xs: "none", sm: "none", md: "block" }}>
+                      <Form className={classes.formiknew}>
+                        <Field
+                          type="text"
+                          name="search"
+                          placeholder="search..."
+                          className={classes.inputField}
+                        />
+                        <Button type="submit">
+                          <SearchOutlinedIcon color="secondary" />
+                        </Button>
+                      </Form>
+                    </Box>
                   </Formik>
-                  <Box>
+                  <Box display={{ xs: "none", sm: "none", md: "block" }}>
                     <NavLink to="/cart">
                       <Badge
                         badgeContent={productLenght.length}
