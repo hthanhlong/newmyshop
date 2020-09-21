@@ -76,7 +76,7 @@ export default function Login(props) {
                   <Field
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="ID: admin@gmail.com"
                     autoComplete="email"
                     className={classes.field}
                   />
@@ -98,7 +98,7 @@ export default function Login(props) {
                   <Field
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Pws: 123456"
                     autoComplete="current-password"
                     className={classes.field}
                   />
