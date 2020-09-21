@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "node server.js && cd Frontend && npm install && npm run build"
+    "heroku-postbuild": "cd Frontend && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
