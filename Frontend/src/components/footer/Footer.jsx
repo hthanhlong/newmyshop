@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Box className={classes.footer}>
       <Grid container spacing={3}>
-        <Grid item xl={3} lg={3} md={6} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={6} xs={12}>
           <Box className={classes.column}>
             <Box>
               <Typography variant="h4" style={{ marginBottom: "1rem" }}>
@@ -22,7 +22,7 @@ const Footer = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xl={3} lg={3} md={6} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={6} xs={12}>
           <Box className={classes.column}>
             <Box>
               <Typography className={classes.title}>Quick Links</Typography>
@@ -37,7 +37,7 @@ const Footer = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xl={3} lg={3} md={6} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={6} xs={12}>
           <Box className={classes.column}>
             <Box>
               <Typography className={classes.title}>New Products</Typography>
@@ -52,7 +52,7 @@ const Footer = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xl={3} lg={3} md={6} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={6} xs={12}>
           <Box className={classes.column}>
             <Box>
               <Typography className={classes.title}>Support</Typography>

@@ -60,10 +60,14 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     width: "100%",
     paddingLeft: "0.5rem",
-    marginRight: "0.6rem",
+    [theme.breakpoints.down("xs")]: {
+      height: "2.3rem",
+    },
   },
   inputField: {
     border: "none",
     outlineStyle: "none",
   },
+  iconCart: {},
+  homebutton: {},
 }));

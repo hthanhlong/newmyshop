@@ -28,6 +28,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { searchField } from "../../action/ ProductAction";
+import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 
 export default function Header() {
   const productLenght = useSelector((state) => state.cart);
@@ -77,15 +78,22 @@ export default function Header() {
         <AppBar position="static">
           <Toolbar className={classes.appbar}>
             <Grid item lg={1} md={1} sm={1} xs={3}>
-              <Box>
+              <Box display={{ xs: "none", sm: "block" }}>
                 <Typography variant="h6">
                   <NavLink className={classes.logo} exact to="/">
                     MyShop
                   </NavLink>
                 </Typography>
               </Box>
+              <Box display={{ sm: "none" }}>
+                <NavLink exact to="/">
+                  <IconButton>
+                    <HomeOutlinedIcon fontSize="large" color="primary" />
+                  </IconButton>
+                </NavLink>
+              </Box>
             </Grid>
-            <Grid item lg={6} md={6} sm={6} xs={5}>
+            <Grid item lg={6} md={6}>
               <Box display={{ xs: "none", sm: "none", lg: "block" }}>
                 <List className={classes.list}>
                   <ListItem>
@@ -165,15 +173,15 @@ export default function Header() {
                 </List>
               </Box>
             </Grid>
-            <Grid item lg={4} md={4} sm={4} xs={4}>
+            <Grid item lg={4} md={6} sm={6} xs={11}>
               <Box className={classes.search}>
-                <Box display={{ xs: "none", sm: "none", md: "block" }}>
+                <Box style={{ margin: "0.1rem 0.3rem 0 0 " }}>
                   <Formik
                     initialValues={search}
                     validationSchema={searchTermSchema}
                     onSubmit={handleOnSubmit}
                   >
-                    <Box display={{ xs: "none", sm: "none", md: "block" }}>
+                    <Box>
                       <Form className={classes.formiknew}>
                         <Field
                           type="text"
@@ -181,14 +189,16 @@ export default function Header() {
                           placeholder="search..."
                           className={classes.inputField}
                         />
-                        <Button type="submit">
-                          <SearchOutlinedIcon color="secondary" />
-                        </Button>
+                        <Box display={{ xs: "none", sm: "block" }}>
+                          <Button type="submit">
+                            <SearchOutlinedIcon color="secondary" />
+                          </Button>
+                        </Box>
                       </Form>
                     </Box>
                   </Formik>
                 </Box>
-                <Box display={{ xs: "none", sm: "none", md: "block" }}>
+                <Box className={classes.iconCart}>
                   <NavLink to="/cart">
                     <Badge
                       badgeContent={productLenght.length}

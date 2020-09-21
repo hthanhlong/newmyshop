@@ -165,11 +165,12 @@ const Main = () => {
         </Box>
       </Box>
       <Box className={classes.pagination}>
-        <Box className={classes.root}>
+        <Box className={classes.root} maxWidth="xs">
           <Pagination
             onChange={handleOnchange}
             page={pagination.page}
             count={products.totalPages}
+            size="small"
           />
         </Box>
       </Box>
