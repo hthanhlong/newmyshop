@@ -17,8 +17,8 @@
     "dotenv": "^8.2.0"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "heroku-postbuild": "cd Frontend && npm install && npm run build"
+    "start": "node server.js",
+    "heroku-postbuild": "node server.js && cd Frontend && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
