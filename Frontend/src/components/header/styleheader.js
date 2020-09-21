@@ -10,8 +10,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "black",
     height: "5rem",
     display: "flex",
-    justifyContent: "center",
-    // position: "fixed",
+    justifyContent: "space-between",
     zIndex: 99,
   },
 
@@ -33,9 +32,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   search: {
     display: "flex",
-    height: "100%",
     justifyContent: "space-between",
-    alignItem: "center",
   },
 
   note: {

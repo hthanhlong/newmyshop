@@ -74,16 +74,18 @@ export default function Header() {
   return (
     <div>
       <Grid container className={classes.content}>
-        <AppBar position="static" className={classes.appbar}>
-          <Toolbar>
+        <AppBar position="static">
+          <Toolbar className={classes.appbar}>
             <Grid item lg={1} md={1} sm={1} xs={3}>
-              <Typography variant="h6">
-                <NavLink className={classes.logo} exact to="/">
-                  MyShop
-                </NavLink>
-              </Typography>
+              <Box>
+                <Typography variant="h6">
+                  <NavLink className={classes.logo} exact to="/">
+                    MyShop
+                  </NavLink>
+                </Typography>
+              </Box>
             </Grid>
-            <Grid item lg={7} md={7} sm={7} xs={5}>
+            <Grid item lg={6} md={6} sm={6} xs={5}>
               <Box display={{ xs: "none", sm: "none", lg: "block" }}>
                 <List className={classes.list}>
                   <ListItem>
@@ -163,12 +165,9 @@ export default function Header() {
                 </List>
               </Box>
             </Grid>
-            <Grid item lg={4} md={7} sm={7} xs={4}>
+            <Grid item lg={4} md={4} sm={4} xs={4}>
               <Box className={classes.search}>
-                <Box
-                  display={{ xs: "none", sm: "none", md: "block" }}
-                  style={{ display: "flex" }}
-                >
+                <Box display={{ xs: "none", sm: "none", md: "block" }}>
                   <Formik
                     initialValues={search}
                     validationSchema={searchTermSchema}
@@ -188,21 +187,20 @@ export default function Header() {
                       </Form>
                     </Box>
                   </Formik>
-                  <Box display={{ xs: "none", sm: "none", md: "block" }}>
-                    <NavLink to="/cart">
-                      <Badge
-                        badgeContent={productLenght.length}
-                        color="secondary"
-                      >
-                        <ShoppingCartOutlinedIcon
-                          style={{
-                            fontSize: "2.5rem",
-                            marginLeft: "1.4rem",
-                          }}
-                        />
-                      </Badge>
-                    </NavLink>
-                  </Box>
+                </Box>
+                <Box display={{ xs: "none", sm: "none", md: "block" }}>
+                  <NavLink to="/cart">
+                    <Badge
+                      badgeContent={productLenght.length}
+                      color="secondary"
+                    >
+                      <ShoppingCartOutlinedIcon
+                        style={{
+                          fontSize: "2.5rem",
+                        }}
+                      />
+                    </Badge>
+                  </NavLink>
                 </Box>
                 <Box>
                   {userInfo.isAuth ? (
