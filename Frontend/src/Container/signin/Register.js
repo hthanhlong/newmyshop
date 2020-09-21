@@ -158,7 +158,11 @@ export default function Register() {
                 variant="contained"
                 color="primary"
                 type="submit"
-                style={{ width: "100%", marginBottom: "0.5rem" }}
+                style={{
+                  width: "100%",
+                  marginBottom: "0.5rem",
+                  marginTop: "2rem",
+                }}
               >
                 Register
               </Button>
