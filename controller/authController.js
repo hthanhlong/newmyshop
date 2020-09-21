@@ -43,37 +43,28 @@ class authController {
   }
 
   async login(req, res, next) {
-    // const { error } = await schemaLogin.validate({
-    //   email: req.body.email,
-    //   password: req.body.password,
-    // });
-
-    // if (error) return res.status(400).send(error.details[0].message);
-    // // Check User is already in Database
-    // const user = await User.findOne({ email: req.body.email });
-    // if (!user) return res.status(400).send("Email was not found");
-    // // check password
-    // const validPass = await bcrypt.compare(req.body.password, user.password);
-    // if (!validPass) return res.status(400).send("Invalid password");
-
-    const token = jwt.sign({ name: "admin" }, process.env.TOKEN_SECRET, {
-      expiresIn: "48h",
-    });
-
-    const userInfo = {
-      name: "admin",
+    const { error } = await schemaLogin.validate({
       email: req.body.email,
       password: req.body.password,
+    });
+    if (error) return res.status(400).send(error.details[0].message);
+    // Check User is already in Database
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send("Email was not found");
+    // check password
+    const validPass = await bcrypt.compare(req.body.password, user.password);
+    if (!validPass) return res.status(400).send("Invalid password");
+    // Create and assign a token
+
+    const token = jwt.sign({ _id: user.id }, process.env.TOKEN_SECRET, {
+      expiresIn: "48h",
+    });
+    const userInfo = {
+      name: user.name,
+      email: user.email,
       token: token,
     };
-
-    if (
-      userInfo.email === "admin@gmail.com" &&
-      userInfo.password === "123456"
-    ) {
-      res.header("token", token).send(userInfo);
-    }
-    // // Create and assign a token
+    res.header("token", token).send(userInfo);
     next();
   }
 }
