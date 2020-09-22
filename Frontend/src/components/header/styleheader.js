@@ -61,11 +61,14 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     paddingLeft: "0.5rem",
     [theme.breakpoints.down("xs")]: {
-      height: "2.3rem",
+      marginRight: "0.3rem",
+      // height: "2.3rem",
+      width: "12rem",
     },
   },
   inputField: {
     border: "none",
+    width: "100%",
     outlineStyle: "none",
   },
   iconCart: {},

@@ -29,6 +29,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { searchField } from "../../action/ ProductAction";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
+import AccountCircleSharpIcon from "@material-ui/icons/AccountCircleSharp";
 
 export default function Header() {
   const productLenght = useSelector((state) => state.cart);
@@ -77,7 +78,7 @@ export default function Header() {
       <Grid container className={classes.content}>
         <AppBar position="static">
           <Toolbar className={classes.appbar}>
-            <Grid item lg={1} md={1} sm={1} xs={3}>
+            <Grid item lg={1} md={1} sm={1} xs={2}>
               <Box display={{ xs: "none", sm: "block" }}>
                 <Typography variant="h6">
                   <NavLink className={classes.logo} exact to="/">
@@ -93,89 +94,88 @@ export default function Header() {
                 </NavLink>
               </Box>
             </Grid>
-            <Grid item lg={6} md={6}>
-              <Box display={{ xs: "none", sm: "none", lg: "block" }}>
-                <List className={classes.list}>
-                  <ListItem>
-                    <ListItemText>
-                      <NavLink
-                        activeStyle={{
-                          color: "red",
-                        }}
-                        className={classes.listitem}
-                        exact
-                        to="/"
-                      >
-                        Home
-                      </NavLink>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <NavLink
-                        activeStyle={{
-                          color: "red",
-                        }}
-                        exact
-                        to="/categori"
-                        className={classes.listitem}
-                      >
-                        <div className="headerabc">Category</div>
-                      </NavLink>
-                      <ul className="headerabc_menu">
-                        <li>a</li>
-                        <li>a</li>
-                      </ul>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <NavLink
-                        activeStyle={{
-                          color: "red",
-                        }}
-                        className={classes.listitem}
-                        exact
-                        to="/lastest"
-                      >
-                        Lastest
-                      </NavLink>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <NavLink
-                        activeStyle={{
-                          color: "red",
-                        }}
-                        className={classes.listitem}
-                        exact
-                        to="/pages"
-                      >
-                        Pages
-                      </NavLink>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText>
-                      <NavLink
-                        activeStyle={{
-                          color: "red",
-                        }}
-                        className={classes.listitem}
-                        exact
-                        to="/contact"
-                      >
-                        Contact
-                      </NavLink>
-                    </ListItemText>
-                  </ListItem>
-                </List>
-              </Box>
-            </Grid>
-            <Grid item lg={4} md={6} sm={6} xs={11}>
-              <Box className={classes.search}>
-                <Box style={{ margin: "0.1rem 0.3rem 0 0 " }}>
+            {userInfo.isAuth && (
+              <Grid item lg={6} md={6}>
+                <Box display={{ xs: "none", sm: "none", lg: "block" }}>
+                  <List className={classes.list}>
+                    <ListItem>
+                      <ListItemText>
+                        <NavLink
+                          activeStyle={{
+                            color: "red",
+                          }}
+                          className={classes.listitem}
+                          exact
+                          to="/"
+                        >
+                          Home
+                        </NavLink>
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText>
+                        <NavLink
+                          activeStyle={{
+                            color: "red",
+                          }}
+                          exact
+                          to="/categori"
+                          className={classes.listitem}
+                        >
+                          <div className="headerabc">Category</div>
+                        </NavLink>
+                        <ul className="headerabc_menu"></ul>
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText>
+                        <NavLink
+                          activeStyle={{
+                            color: "red",
+                          }}
+                          className={classes.listitem}
+                          exact
+                          to="/lastest"
+                        >
+                          Lastest
+                        </NavLink>
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText>
+                        <NavLink
+                          activeStyle={{
+                            color: "red",
+                          }}
+                          className={classes.listitem}
+                          exact
+                          to="/pages"
+                        >
+                          Pages
+                        </NavLink>
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText>
+                        <NavLink
+                          activeStyle={{
+                            color: "red",
+                          }}
+                          className={classes.listitem}
+                          exact
+                          to="/contact"
+                        >
+                          Contact
+                        </NavLink>
+                      </ListItemText>
+                    </ListItem>
+                  </List>
+                </Box>
+              </Grid>
+            )}
+            {userInfo.isAuth && (
+              <Grid item lg={4} md={6} sm={8} xs={10}>
+                <div className="d-flex justify-content-between align-items-center headermobile">
                   <Formik
                     initialValues={search}
                     validationSchema={searchTermSchema}
@@ -197,31 +197,36 @@ export default function Header() {
                       </Form>
                     </Box>
                   </Formik>
-                </Box>
-                <Box className={classes.iconCart}>
-                  <NavLink to="/cart">
-                    <Badge
-                      badgeContent={productLenght.length}
-                      color="secondary"
-                    >
-                      <ShoppingCartOutlinedIcon
-                        style={{
-                          fontSize: "2.5rem",
-                        }}
-                      />
-                    </Badge>
-                  </NavLink>
-                </Box>
-                <Box>
-                  {userInfo.isAuth ? (
-                    <Box>
+                  <div>
+                    <NavLink to="/cart">
+                      <Badge
+                        badgeContent={productLenght.length}
+                        color="secondary"
+                      >
+                        <ShoppingCartOutlinedIcon className="sizecarticon" />
+                      </Badge>
+                    </NavLink>
+                  </div>
+                  <Box>
+                    <div>
                       <Button
                         aria-owns={anchorEl ? "simple-menu" : undefined}
                         aria-haspopup="true"
                         onClick={handleClick}
                         onMouseOver={handleClick}
                       >
-                        {userInfo.user.name}
+                        <div className="d-none d-sm-block">
+                          {userInfo.user.name}
+                        </div>
+                        <div className="d-block d-sm-none">
+                          {userInfo.user.name && (
+                            <div>
+                              <AccountCircleSharpIcon
+                                style={{ marginTop: "0.4rem" }}
+                              />
+                            </div>
+                          )}
+                        </div>
                       </Button>
                       <Menu
                         id="simple-menu"
@@ -235,20 +240,11 @@ export default function Header() {
                         <MenuItem>My account</MenuItem>
                         <MenuItem onClick={handleLogOut}>Logout</MenuItem>
                       </Menu>
-                    </Box>
-                  ) : (
-                    <Link
-                      to="/login"
-                      style={{ textDecoration: "none", color: "white" }}
-                    >
-                      <MyButton style={{ width: "8rem", height: "100%" }}>
-                        Log in
-                      </MyButton>
-                    </Link>
-                  )}
-                </Box>
-              </Box>
-            </Grid>
+                    </div>
+                  </Box>
+                </div>
+              </Grid>
+            )}
           </Toolbar>
         </AppBar>
         <Toolbar id="back-to-top-anchor" />
