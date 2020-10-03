@@ -1,9 +1,0 @@
-.MuiIcon-root {
-  font-size: 2rem;
-}
-
-@media (max-width: 576px) {
-  .MuiIcon-root {
-    font-size: 1rem;
-  }
-}

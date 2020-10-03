@@ -1,22 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
-import { store, persistor } from "./store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "./store";
+
+const theme = createMuiTheme({
+  typography: {
+    // Tell Material-UI what's the font-size on the html element is.
+    htmlFontSize: 10,
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App />
+          <Router>
+            <App />
+          </Router>
         </PersistGate>
       </Provider>
-    </Router>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

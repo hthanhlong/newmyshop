@@ -1,0 +1,24 @@
+@import "./Scss/variables";
+@import "./Scss/config";
+@import "./Scss/mixin";
+// Container
+@import "./Container/Home/styles";
+@import "./Container/About/styles";
+@import "./Components/Header/styles";
+@import "./Container/Blog/styles";
+@import "./Components/Footer/styles";
+@import "./Container/Login/styles";
+@import "./Container/Register/styles";
+@import "./Container/Category/styles";
+@import "./Container/Cart/styles";
+@import "./Container/Contact/styles";
+@import "./Container/ProductDetails/styles";
+@import "./Container/Payment/styles";
+@import "./Container/AdminPages/Admin/styles";
+
+.lazyload {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

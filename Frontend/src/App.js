@@ -1,41 +1,60 @@
-import React, { lazy, Suspense } from "react";
-import Header from "./components/header";
+import React, { Suspense, lazy } from "react";
+import "./app.css";
+import Header from "./Components/Header/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Footer from "./components/footer/Footer";
 import { Switch, Route } from "react-router-dom";
-import CartPage from "./Container/cart/Cart";
-import Lastest from "./Container/lastest/Lastest";
-import Page from "./Container/page/Page";
-import Contact from "./Container/contact/Contact";
-import Register from "./Container/signin/Register";
-import Login from "./Container/login/login";
-import PrivateRoute from "./router/PrivateRoute";
-import Category from "./Container/category/Categori";
+import Footer from "./Components/Footer/Footer";
+import PrivateRouter from "./Services/PrivateRouter";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import NotFound from "./Container/NotFound404/NotFound";
+import ScrollToTop from "./Components/ScolltoTop";
 
+const Payment = lazy(() => import("./Container/Payment/Payment"));
+const Blog = lazy(() => import("./Container/Blog/Blog"));
+const Register = lazy(() => import("./Container/Register/Register"));
+const Category = lazy(() => import("./Container/Category/Category"));
+const Cart = lazy(() => import("./Container/Cart/Cart"));
+const Contact = lazy(() => import("./Container/Contact/Contact"));
+const Admin = lazy(() => import("./Container/AdminPages/Admin/Admin"));
+const ProductDetails = lazy(() =>
+  import("./Container/ProductDetails/ProductDetails")
+);
 const Home = lazy(() => import("./Container/Home/Home"));
+const Login = lazy(() => import("./Container/Login/Login"));
 
-function App(props) {
+function App() {
   return (
-    <div>
-      <CssBaseline />
-      <Suspense fallback={<CircularProgress />}>
-        <Header />
-        <Switch>
-          <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute path="/lastest" component={Lastest} />
-          <PrivateRoute path="/categori" component={Category} />
-          <PrivateRoute path="/pages" component={Page} />
-          <PrivateRoute path="/contact" component={Contact} />
-          <PrivateRoute path="/cart" component={CartPage} />
-          <Route path="/signin" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route patt="*" component={NotFound} />
-        </Switch>
-        <Footer />
-      </Suspense>
-    </div>
+    <>
+      <div className="app">
+        <CssBaseline />
+        <Suspense
+          fallback={
+            <div className="lazyload">
+              <CircularProgress />
+            </div>
+          }
+        >
+          <Header />
+          <ScrollToTop />
+          <Switch>
+            <PrivateRouter exact path="/" component={Home} />
+            <PrivateRouter exact path="/blog" component={Blog} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <PrivateRouter exact path="/category" component={Category} />
+            <PrivateRouter exact path="/cart" component={Cart} />
+            <PrivateRouter exact path="/contact" component={Contact} />
+            <PrivateRouter
+              exact
+              path="/productdetails/:id"
+              component={ProductDetails}
+            />
+            <PrivateRouter exact path="/payment" component={Payment} />
+            <PrivateRouter exact path="/admin" component={Admin} />
+          </Switch>
+          <Footer />
+        </Suspense>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,9 @@
+@mixin flexrow($value) {
+  display: flex;
+  justify-content: $value;
+  align-items: center;
+}
+
+@mixin transitions($time) {
+  transition: all $time ease-in-out;
+}

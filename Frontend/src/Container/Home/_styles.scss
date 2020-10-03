@@ -1,0 +1,458 @@
+.home {
+  &__background {
+    width: 100%;
+    background-color: #c7ecfd;
+    margin: 0 auto;
+  }
+  &__img {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__text {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20%;
+    animation: fadein 1.5s ease-in-out;
+
+    .MuiButtonBase-root {
+      transition: all 0.4s ease;
+      animation: move2 1s infinite alternate;
+      &:hover {
+        color: red;
+        transform: translateY(-10px);
+        background-color: lightcyan;
+      }
+    }
+
+    p {
+      font-family: "Yellowtail", cursive;
+      color: #2577fd;
+      font-size: 4rem;
+      display: inline-block;
+    }
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 10rem;
+      font-weight: 700;
+      @media #{$small_mobile} {
+        font-size: 5rem;
+      }
+    }
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    .MuiButtonBase-root {
+      width: 15rem;
+      height: 5rem;
+      outline: none;
+      font-size: 2rem;
+      @media #{$tab} {
+        margin-bottom: 4rem;
+      }
+    }
+
+    @media #{$large_mobile} {
+      h1 {
+        font-size: 10rem;
+      }
+    }
+  }
+}
+
+.category {
+  width: 100%;
+  text-align: center;
+  margin: 7rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    h1 {
+      display: block;
+      padding: 7rem 0;
+      color: #000;
+      font-size: 4.8rem;
+      font-weight: 700;
+      font-family: "Playfair Display", serif;
+    }
+  }
+
+  &__content {
+    margin: 2rem 0;
+
+    &_card {
+      box-shadow: 2px 2px 3px rgba($color: grey, $alpha: 0.2);
+      margin-top: 1.4rem;
+      img {
+        width: 100%;
+        position: relative;
+      }
+      .card_text {
+        position: absolute;
+        top: 50%;
+        right: 15%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          font-family: "Playfair Display", serif;
+          font-size: 3rem;
+        }
+
+        div {
+          background-color: #ffce30;
+          border-radius: 3rem;
+          padding: 1rem 2rem;
+          color: black;
+          font-weight: 400;
+          transform: translateX(15%);
+        }
+        span {
+          display: block;
+          color: #0071fe;
+          font-size: 2rem;
+          text-transform: capitalize;
+          font-family: "Yellowtail", cursive;
+          font-weight: 600;
+          text-shadow: 0px -3px 0px #fff;
+          transform: translateX(10%);
+        }
+      }
+    }
+  }
+}
+//////@at-root
+
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .MuiDivider-root {
+    width: 100%;
+    margin: 3rem 0;
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 7rem;
+
+    justify-content: space-between;
+
+    h1 {
+      font-size: 4.8rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      li {
+        font-size: 2.5rem;
+        margin: 0 2rem;
+      }
+    }
+  }
+
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0rem 1rem;
+  margin-bottom: 3rem;
+
+  box-shadow: 0px 0px 5px rgb(201, 201, 201);
+  @media #{$xs_mobile} {
+    margin: 0;
+  }
+
+  &__img {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    padding: 0 1em;
+    font-size: 2rem;
+    height: 8rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Playfair Display", serif;
+  }
+  &__content {
+    width: 100%;
+    background-color: rgba($color: rgb(231, 227, 227), $alpha: 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    &__star {
+      color: yellow;
+      .MuiIcon-root {
+        color: yellow;
+        border: 1px solid black;
+      }
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    font-size: 2.2rem;
+    &_old {
+      color: #ff003c;
+      text-decoration: line-through;
+    }
+    @media #{$xs_mobile} {
+      width: 70%;
+    }
+  }
+
+  &__star {
+    .MuiSvgIcon-root {
+      color: #fdc230;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+//
+
+//// best Product
+
+.bestproduct__background {
+  background-color: #fff7d8;
+  margin-top: 4rem;
+  width: 100%;
+  height: 100%;
+  @media #{$xs_mobile} {
+    height: 20rem;
+  }
+}
+.bestproduct_img {
+  img {
+    transform: translateX(20rem);
+  }
+}
+.bestproduct_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  @media #{$xs_mobile} {
+    align-items: center;
+  }
+
+  .MuiButton-root {
+    background-color: black;
+    color: white;
+    height: 4rem;
+    width: 15rem;
+    outline: none;
+    &:hover {
+      color: black;
+      background-color: $btn-hover;
+    }
+  }
+
+  h1 {
+    color: #000;
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 19px;
+    width: 80%;
+    @media #{$xs_mobile} {
+      font-size: 2rem;
+    }
+  }
+  p {
+    font-size: 2.5rem;
+    @media #{$xs_mobile} {
+      font-size: 1.6rem;
+      margin-left: 3rem;
+    }
+  }
+}
+.bestproduct_icon {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  animation: move 2s infinite alternate;
+}
+
+.bestcollection__background {
+  margin: 5rem 0;
+}
+
+.bestcollection__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90%;
+  &_one {
+    padding-top: 30%;
+    h1 {
+      margin-top: 2rem;
+      font-size: 3rem;
+    }
+    p {
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+.bestcollection__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.two h2 {
+  background-color: #2777fc;
+  padding: 2rem;
+  border-radius: 2rem;
+  color: white;
+}
+
+.lastestoffer {
+  background-image: url("/assets/img/collection/latest-offer.png");
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  &__title {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15rem;
+    @media #{$xs_mobile} {
+      padding-left: 0;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 2rem;
+      @media #{$xs_mobile} {
+        font-size: 3rem;
+      }
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+  &__text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10rem;
+    @media #{$xs_mobile} {
+      padding-left: 0rem;
+      width: 100%;
+    }
+
+    input {
+      height: 5rem;
+      font-size: 2rem;
+      border: none;
+      padding: 0 2rem;
+      border-radius: 5rem;
+
+      width: 100%;
+    }
+    input:focus {
+      outline: none;
+    }
+    .MuiButton-root {
+      width: 50%;
+      margin-top: 2rem;
+      height: 5rem;
+      outline: none;
+      border-radius: 5rem;
+      @media #{$xs_mobile} {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: white;
+        color: red;
+      }
+    }
+  }
+}
+
+.promotion {
+  margin: 6rem 0;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem;
+    &_icon {
+      width: 100%;
+      text-align: center;
+    }
+    &_title {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      width: 80%;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

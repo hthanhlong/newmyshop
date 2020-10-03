@@ -1,0 +1,125 @@
+.cart {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  &__title {
+    display: flex;
+    h1 {
+      margin-right: 0.7rem;
+    }
+    h4 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__main {
+    display: flex;
+  }
+
+  &__left {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    &-img {
+      width: 20%;
+      padding: 1rem;
+      margin-right: 2rem;
+    }
+
+    &-content {
+      margin-top: 1.5rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &-left {
+        h3 {
+          margin-bottom: 2rem;
+        }
+        h4 {
+          margin-bottom: 4rem;
+        }
+      }
+      &-right {
+        display: flex;
+        justify-content: space-between;
+
+        width: 30%;
+        margin-right: 1rem;
+        text-align: right;
+      }
+    }
+  }
+
+  &__button {
+    width: 50%;
+    cursor: pointer;
+    &:hover {
+      color: blue;
+    }
+  }
+
+  &__price {
+    display: flex;
+    &-old {
+      text-decoration: line-through;
+      color: grey;
+    }
+  }
+
+  &__right {
+    &-discount {
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 0px 7px rgba($color: grey, $alpha: 0.5);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      h2 {
+        margin-left: 0.5rem;
+      }
+      input {
+        margin: 1.2rem 0;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        outline: none;
+        background-color: #f4f4f4;
+        width: 100%;
+      }
+      .MuiButtonBase-root {
+        width: 40%;
+        background-color: blue;
+        color: white;
+      }
+    }
+
+    &-ordersummary {
+      margin-top: 2rem;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 0px 7px rgba($color: grey, $alpha: 0.5);
+      display: flex;
+      flex-direction: column;
+      margin: 2rem auto;
+      &-title {
+        font-size: 2rem;
+        padding: 2rem;
+        background-color: rgb(255, 250, 242);
+      }
+      &-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 2rem auto;
+        h2 {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.background_cartmain {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 7px rgba($color: grey, $alpha: 0.5);
+  height: 100%;
+  margin-bottom: 10rem;
+}

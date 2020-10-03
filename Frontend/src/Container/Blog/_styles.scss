@@ -1,0 +1,197 @@
+.blog {
+  margin-top: 10rem;
+  width: 85%;
+
+  &__post {
+    margin-bottom: 8rem;
+    box-shadow: 2px 2px 10px rgba($color: grey, $alpha: 0.2);
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    width: 90%;
+    margin: auto;
+    &_title {
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+    &_description {
+      font-size: 1.7rem;
+      margin-bottom: 5rem;
+    }
+
+    &_action {
+      display: flex;
+      width: 40%;
+
+      padding-bottom: 2rem;
+      justify-content: space-between;
+      &-tag {
+        display: flex;
+        position: relative;
+      }
+    }
+  }
+}
+
+.right__side {
+  width: 100%;
+
+  aside {
+    margin-bottom: 2rem;
+  }
+  &-one {
+    background-color: #fff7f7;
+    height: 20rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    input {
+      height: 5rem;
+      width: 90%;
+      margin-top: 5rem;
+      outline: none;
+      border: 1px solid #ffc17a;
+      padding: 0 2rem;
+    }
+
+    .MuiButton-root {
+      width: 90%;
+      margin-top: 2rem;
+      height: 5rem;
+      background-color: blue;
+      color: white;
+      transition: all 0.5s ease;
+      outline: none;
+      &:hover {
+        background-color: white;
+        color: blue;
+        border: 1px solid #fcbcbc;
+      }
+    }
+  }
+
+  &-two {
+    background-color: #fff7f7;
+
+    &-title {
+      h1 {
+        font-size: 2rem;
+      }
+      padding: 2rem 0 1rem 2rem;
+      width: 80%;
+      margin: auto;
+      border-bottom: 1px solid rgb(212, 212, 212);
+    }
+
+    &-list {
+      width: 80%;
+      margin: auto;
+      li {
+        padding: 2rem;
+        border-bottom: 1px solid rgb(212, 212, 212);
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      li:first-child {
+        padding-top: 5rem;
+      }
+    }
+  }
+
+  &-three {
+    background-color: #fff7f7;
+
+    &-title {
+      h1 {
+        font-size: 2rem;
+      }
+      padding: 2rem 0 1rem 2rem;
+      width: 80%;
+      margin: auto;
+      border-bottom: 1px solid rgb(212, 212, 212);
+    }
+
+    &-list {
+      width: 80%;
+      margin: auto;
+      li {
+        padding: 2rem;
+        border-bottom: 1px solid rgb(212, 212, 212);
+        display: flex;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      li:first-child {
+        padding-top: 5rem;
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        justify-content: center;
+        a {
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+        }
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  &-four {
+    background-color: #fff7f7;
+    padding-bottom: 5rem;
+    &-title {
+      h1 {
+        font-size: 2rem;
+      }
+      padding: 2rem 0 1rem 2rem;
+      width: 80%;
+      margin: auto;
+      border-bottom: 1px solid rgb(212, 212, 212);
+    }
+    ul {
+      margin: auto;
+      display: flex;
+      width: 85%;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      li {
+        margin-top: 1rem;
+        margin-right: 2rem;
+        a {
+          background-color: white;
+          border: 1px solid rgb(243, 225, 225);
+          color: rgb(192, 184, 184);
+          padding: 0.2rem 2rem;
+          font-size: 1.4rem;
+          transition: all 0.4s ease;
+          &:hover {
+            background-color: red;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 4rem 0;
+  .MuiButtonBase-root {
+    outline: none;
+  }
+}
+.test {
+  margin: auto;
+  font-size: 1rem;
+  .MuiButtonBase-root {
+    color: red;
+  }
+}

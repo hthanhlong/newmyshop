@@ -1,0 +1,64 @@
+.contact {
+  &__background {
+    padding: 5rem 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(238, 174, 174);
+    background: linear-gradient(
+      175deg,
+      rgba(238, 174, 174, 1) 15%,
+      rgba(148, 233, 163, 1) 100%
+    );
+  }
+  &__content {
+    border-radius: 1rem;
+    max-width: 80%;
+    margin: auto;
+    background-color: #ffff;
+    box-shadow: 0px 0x 10px rgba(33, 34, 33, 0.5);
+    &-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin: auto;
+      }
+    }
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: 4rem;
+    color: rgb(0, 0, 0);
+  }
+  &__textarea {
+    width: 30rem;
+    height: 20rem;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 1rem;
+    &:focus {
+      box-shadow: 0px 0px 10px rgb(240, 177, 177);
+    }
+  }
+
+  &__button {
+    .MuiButtonBase-root {
+      background-color: #9be1a5;
+      color: black;
+      margin: 4rem 0;
+      width: 100%;
+      outline: none;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
