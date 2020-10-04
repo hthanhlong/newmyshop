@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { logout } from "../../ActionTypes/authAction";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -217,12 +218,33 @@ const Header = () => {
             }
           >
             <ul className="nav_list">
-              <li>Sign in</li>
-              <li>About</li>
-              <li>Contact</li>
-              <li>Cart</li>
+              <li>
+                <Link to="/" onClick={toggleMenu}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/category" onClick={toggleMenu}>
+                  Category
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" onClick={toggleMenu}>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={toggleMenu}>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" onClick={handleLogOut}>
+                  Log out
+                </Link>
+              </li>
               <li className="nav_close" onClick={toggleMenu}>
-                x
+                <CloseIcon />
               </li>
             </ul>
           </div>

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PersonIcon from "@material-ui/icons/Person";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import { Link } from "react-router-dom";
+import Axios from "axios";
+import { API_ROOT } from "../../../Api/configAxios";
 
 const Admin = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const a = Axios.get(`${API_ROOT}/order`)
+      .then((res) => setData(res.data))
+      .catch((err) => err.message);
+  }, []);
+
   return (
     <div className="container-fluid admin">
       <nav className="admin__nav">
@@ -66,33 +76,35 @@ const Admin = () => {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
+                <th scope="col">FristName</th>
+                <th scope="col">LastName</th>
                 <th scope="col">Addres</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Product</th>
-                <th scope="col">Total</th>
                 <th scope="col">Create At</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              {!data ? (
+                <div>No data </div>
+              ) : (
+                data.map((item) => (
+                  <tr key={item._id}>
+                    <th scope="row">1</th>
+                    <td>{item.firstName}</td>
+                    <td>{item.lastName}</td>
+                    <td>{item.address}</td>
+                    <td>{item.phoneNumber}</td>
+                    <td>
+                      {item.cart.map((x) => (
+                        <div key={x.id}>{x.id},</div>
+                      ))}
+                    </td>
+                    <td>{item.created_at}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>

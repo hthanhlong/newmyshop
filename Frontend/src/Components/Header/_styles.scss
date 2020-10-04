@@ -211,3 +211,16 @@
 .profile:hover .profile__title-list {
   display: block;
 }
+
+.nav_list {
+  li {
+    margin-bottom: 2rem;
+    a {
+      text-transform: uppercase;
+      color: white;
+      &:hover {
+        color: $btn-hover;
+      }
+    }
+  }
+}

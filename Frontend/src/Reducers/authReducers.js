@@ -35,6 +35,7 @@ export const authReducers = (state = initialState, action) => {
       };
     case LOG_OUT:
       localStorage.removeItem("Token");
+      localStorage.removeItem("persist:root");
       return {
         isAuth: false,
       };

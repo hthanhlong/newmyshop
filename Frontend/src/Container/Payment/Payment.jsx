@@ -4,24 +4,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../ActionTypes/cartAction";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { RegisterSchema } from "../../Services/Validation";
+import { Order } from "../../Services/Validation";
+import Axios from "axios";
+import { API_ROOT } from "../../Api/configAxios";
 
 const Payment = () => {
   const dispatch = useDispatch();
-  const User = {
-    name: "",
+
+  const yourOrder = {
+    firstName: "",
+    lastName: "",
     email: "",
-    password: "",
+    phoneNumber: "",
+    address: "",
   };
 
   const listCart = useSelector((state) => state.cart.itemsList);
 
-  const handleDetele = (product) => {
-    dispatch(removeFromCart(product));
-  };
-
-  const handlePayment = (value) => {
-    console.log(value);
+  const handlePayment = async (value) => {
+    await Axios.post(`${API_ROOT}/order/products`, {
+      ...value,
+      cart: listCart,
+    });
+    console.log({ ...value, cart: listCart });
   };
 
   return (
@@ -30,8 +35,8 @@ const Payment = () => {
         <div className="row payment__main">
           <div className="col-12 col-lg-9 background_payment">
             <Formik
-              initialValues={User}
-              validationSchema={RegisterSchema}
+              initialValues={yourOrder}
+              validationSchema={Order}
               onSubmit={handlePayment}
             >
               <Form className="payment__form">
@@ -41,19 +46,19 @@ const Payment = () => {
                 <div className="row payment__form_content">
                   <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 loginform__group payment_group">
                     <Field
-                      name="firstname"
+                      name="firstName"
                       type="text"
                       placeholder="Your First Name..."
                     />
-                    <ErrorMessage name="firstname" component="div" />
+                    <ErrorMessage name="firstName" component="div" />
                   </div>
                   <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 loginform__group payment_group">
                     <Field
-                      name="lastname"
+                      name="lastName"
                       type="text"
                       placeholder="Your Last Name..."
                     />
-                    <ErrorMessage name="lastname" component="div" />
+                    <ErrorMessage name="lastName" component="div" />
                   </div>
                   <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 loginform__group payment_group">
                     <Field
@@ -65,11 +70,11 @@ const Payment = () => {
                   </div>
                   <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 loginform__group payment_group">
                     <Field
-                      name="phonenumber"
+                      name="phoneNumber"
                       type="text"
                       placeholder="Your Phone Number..."
                     />
-                    <ErrorMessage name="phonenumber" component="div" />
+                    <ErrorMessage name="phoneNumber" component="div" />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 loginform__group payment_group">
                     <Field
