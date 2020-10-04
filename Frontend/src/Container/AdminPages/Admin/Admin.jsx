@@ -97,8 +97,8 @@ const Admin = () => {
                     <td>{item.address}</td>
                     <td>{item.phoneNumber}</td>
                     <td>
-                      {item.cart.map((x) => (
-                        <div key={x.id}>{x.id},</div>
+                      {item.cart.map((x, index) => (
+                        <div key={index}>{x.id},</div>
                       ))}
                     </td>
                     <td>{item.created_at}</td>

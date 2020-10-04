@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Divider, Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../ActionTypes/cartAction";
+import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Order } from "../../Services/Validation";
 import Axios from "axios";
 import { API_ROOT } from "../../Api/configAxios";
 
-const Payment = () => {
-  const dispatch = useDispatch();
+const Payment = (props) => {
+  const { history } = props;
 
   const yourOrder = {
     firstName: "",
@@ -26,7 +26,14 @@ const Payment = () => {
       ...value,
       cart: listCart,
     });
-    console.log({ ...value, cart: listCart });
+
+    if (value !== "") {
+      await alert("Payment Successfully");
+
+      await setTimeout(() => {
+        history.push("/");
+      }, 200);
+    }
   };
 
   return (
@@ -85,7 +92,12 @@ const Payment = () => {
                     <ErrorMessage name="address" component="div" />
                   </div>
                   <div className="productdetails__button-addtocart payment_button">
-                    <Button type="submit" style={{ width: "100%" }}>
+                    <Button
+                      type="submit"
+                      style={{ width: "100%" }}
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                    >
                       Payment
                     </Button>
                   </div>
@@ -152,6 +164,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      {/* Modal */}
     </div>
   );
 };
