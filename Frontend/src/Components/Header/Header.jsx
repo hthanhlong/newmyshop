@@ -220,30 +220,16 @@ const Header = () => {
           >
             <ul className="nav_list">
               <li>
-                <Link to="/" onClick={() => setIsActiveMenu(!isActiveMenu)}>
-                  Home
-                </Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link
-                  to="/category"
-                  onClick={() => setIsActiveMenu(!isActiveMenu)}
-                >
-                  Category
-                </Link>
+                <Link to="/category">Category</Link>
               </li>
               <li>
-                <Link to="/blog" onClick={() => setIsActiveMenu(!isActiveMenu)}>
-                  Blog
-                </Link>
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  onClick={() => setIsActiveMenu(!isActiveMenu)}
-                >
-                  Contact
-                </Link>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
                 <Link to="/login" onClick={handleLogOut}>
