@@ -84,47 +84,49 @@ const Cart = () => {
               ))
             )}
           </div>
-          <div className="col-12 col-lg-3">
-            <div className="cart__right">
-              <div className="row cart__right-discount">
-                <h2>Enter voucher code</h2>
-                <input name="name" type="text" placeholder="Your code..." />
-              </div>
-              <div className="row cart__right-ordersummary">
-                <div className="cart__right-ordersummary-title">
-                  Order Summary
+          {listCart.length > 0 && (
+            <div className="col-12 col-lg-3">
+              <div className="cart__right">
+                <div className="row cart__right-discount">
+                  <h2>Enter voucher code</h2>
+                  <input name="name" type="text" placeholder="Your code..." />
                 </div>
-                <div className="cart__right-ordersummary-price">
-                  <span>Subtotal:</span>
-                  <h3>
-                    ${" "}
-                    {listCart.reduce(
-                      (total, element) =>
-                        total + element.count * element.newprice,
-                      0
-                    )}
-                  </h3>
+                <div className="row cart__right-ordersummary">
+                  <div className="cart__right-ordersummary-title">
+                    Order Summary
+                  </div>
+                  <div className="cart__right-ordersummary-price">
+                    <span>Subtotal:</span>
+                    <h3>
+                      ${" "}
+                      {listCart.reduce(
+                        (total, element) =>
+                          total + element.count * element.newprice,
+                        0
+                      )}
+                    </h3>
+                  </div>
+                  <Divider />
+                  <div className="cart__right-ordersummary-price">
+                    <span>Order Total:</span>
+                    <h2>
+                      ${" "}
+                      {listCart.reduce(
+                        (total, element) =>
+                          total + element.count * element.newprice,
+                        0
+                      )}
+                    </h2>
+                  </div>
                 </div>
-                <Divider />
-                <div className="cart__right-ordersummary-price">
-                  <span>Order Total:</span>
-                  <h2>
-                    ${" "}
-                    {listCart.reduce(
-                      (total, element) =>
-                        total + element.count * element.newprice,
-                      0
-                    )}
-                  </h2>
+                <div className="productdetails__button-addtocart">
+                  <Link to="/payment">
+                    <Button style={{ width: "100%" }}>Check out</Button>
+                  </Link>
                 </div>
-              </div>
-              <div className="productdetails__button-addtocart">
-                <Link to="/payment">
-                  <Button style={{ width: "100%" }}>Check out</Button>
-                </Link>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

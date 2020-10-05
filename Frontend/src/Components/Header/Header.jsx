@@ -26,7 +26,7 @@ const Header = () => {
 
   const handleLogOut = async () => {
     await dispatch(logout());
-    await setIsActiveMenu(!isActiveMenu);
+    setIsActiveMenu(!isActiveMenu);
   };
 
   if (isAuth === false) {
@@ -50,9 +50,9 @@ const Header = () => {
 
             <div
               className={
-                isActiveMenu
-                  ? "nav_mobile d-sm-block d-lg-none togglemenu"
-                  : "nav_mobile d-lg-none"
+                isActiveMenu === false
+                  ? "nav_mobile d-lg-block"
+                  : "nav_mobile d-sm-none togglemenu"
               }
             >
               <ul className="nav_list">
@@ -213,23 +213,37 @@ const Header = () => {
           </div>
           <div
             className={
-              isActiveMenu
-                ? "nav_mobile d-sm-none togglemenu"
-                : "nav_mobile d-lg-block"
+              isActiveMenu === false
+                ? "nav_mobile d-lg-block"
+                : "nav_mobile d-sm-none togglemenu"
             }
           >
             <ul className="nav_list">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/category">Category</Link>
+                <Link
+                  to="/category"
+                  onClick={() => setIsActiveMenu(!isActiveMenu)}
+                >
+                  Category
+                </Link>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog" onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsActiveMenu(!isActiveMenu)}
+                >
+                  Contact
+                </Link>
               </li>
               <li>
                 <Link to="/login" onClick={handleLogOut}>
