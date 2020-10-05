@@ -51,7 +51,7 @@ const Header = () => {
               className={
                 isActiveMenu
                   ? "nav_mobile d-none"
-                  : "(nav_mobile d-block togglemenu)"
+                  : "nav_mobile d-block togglemenu"
               }
             >
               <ul className="nav_list">
@@ -63,7 +63,7 @@ const Header = () => {
                   className="nav_close"
                   onClick={() => setIsActiveMenu(!isActiveMenu)}
                 >
-                  x
+                  <CloseIcon />
                 </li>
               </ul>
             </div>
@@ -213,8 +213,8 @@ const Header = () => {
           <div
             className={
               isActiveMenu
-                ? "nav_mobile d-sm-none togglemenu"
-                : "nav_mobile d-lg-none"
+                ? "nav_mobile d-lg-block"
+                : "nav_mobile d-sm-none togglemenu"
             }
           >
             <ul className="nav_list">
