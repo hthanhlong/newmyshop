@@ -26,6 +26,7 @@ const Header = () => {
 
   const handleLogOut = async () => {
     await dispatch(logout());
+    await setIsActiveMenu(!isActiveMenu);
   };
 
   if (isAuth === false) {
@@ -50,8 +51,8 @@ const Header = () => {
             <div
               className={
                 isActiveMenu
-                  ? "nav_mobile d-none"
-                  : "nav_mobile d-block togglemenu"
+                  ? "nav_mobile d-sm-block d-lg-none togglemenu"
+                  : "nav_mobile d-lg-none"
               }
             >
               <ul className="nav_list">
@@ -213,8 +214,8 @@ const Header = () => {
           <div
             className={
               isActiveMenu
-                ? "nav_mobile d-lg-block"
-                : "nav_mobile d-sm-none togglemenu"
+                ? "nav_mobile d-sm-none togglemenu"
+                : "nav_mobile d-lg-block"
             }
           >
             <ul className="nav_list">
