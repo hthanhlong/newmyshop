@@ -24,11 +24,13 @@ const Header = () => {
 
   const listCart = useSelector((state) => state.cart.itemsList);
 
-  const handleLogOut = async () => {
-    await dispatch(logout());
+  const toggleMenu = () => {
     setIsActiveMenu(!isActiveMenu);
   };
 
+  const handleLogOut = async () => {
+    await dispatch(logout());
+  };
   if (isAuth === false) {
     return (
       <Paper elevation={3}>
@@ -43,14 +45,14 @@ const Header = () => {
             </div>
 
             <li className="mobile_button d-lg-none">
-              <IconButton onClick={() => setIsActiveMenu(!isActiveMenu)}>
+              <IconButton onClick={toggleMenu}>
                 <MenuOutlinedIcon />
               </IconButton>
             </li>
 
             <div
               className={
-                isActiveMenu === false
+                isActiveMenu
                   ? "nav_mobile d-lg-block"
                   : "nav_mobile d-sm-none togglemenu"
               }
@@ -60,10 +62,7 @@ const Header = () => {
                 <li>About</li>
                 <li>Contact</li>
                 <li>Cart</li>
-                <li
-                  className="nav_close"
-                  onClick={() => setIsActiveMenu(!isActiveMenu)}
-                >
+                <li className="nav_close" onClick={toggleMenu}>
                   <CloseIcon />
                 </li>
               </ul>
@@ -205,7 +204,7 @@ const Header = () => {
                 )}
               </li>
               <li className="mobile_button d-lg-none">
-                <IconButton onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                <IconButton onClick={toggleMenu}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </li>
@@ -213,35 +212,29 @@ const Header = () => {
           </div>
           <div
             className={
-              isActiveMenu === false
+              isActiveMenu
                 ? "nav_mobile d-lg-block"
                 : "nav_mobile d-sm-none togglemenu"
             }
           >
             <ul className="nav_list">
               <li>
-                <Link to="/" onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                <Link to="/" onClick={toggleMenu}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/category"
-                  onClick={() => setIsActiveMenu(!isActiveMenu)}
-                >
+                <Link to="/category" onClick={toggleMenu}>
                   Category
                 </Link>
               </li>
               <li>
-                <Link to="/blog" onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                <Link to="/blog" onClick={toggleMenu}>
                   Blog
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  onClick={() => setIsActiveMenu(!isActiveMenu)}
-                >
+                <Link to="/contact" onClick={toggleMenu}>
                   Contact
                 </Link>
               </li>
@@ -250,10 +243,7 @@ const Header = () => {
                   Log out
                 </Link>
               </li>
-              <li
-                className="nav_close"
-                onClick={() => setIsActiveMenu(!isActiveMenu)}
-              >
+              <li className="nav_close" onClick={toggleMenu}>
                 <CloseIcon />
               </li>
             </ul>
