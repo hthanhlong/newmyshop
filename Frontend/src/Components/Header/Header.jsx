@@ -24,13 +24,10 @@ const Header = () => {
 
   const listCart = useSelector((state) => state.cart.itemsList);
 
-  const toggleMenu = () => {
-    setIsActiveMenu(!isActiveMenu);
-  };
-
   const handleLogOut = async () => {
     await dispatch(logout());
   };
+
   if (isAuth === false) {
     return (
       <Paper elevation={3}>
@@ -45,7 +42,7 @@ const Header = () => {
             </div>
 
             <li className="mobile_button d-lg-none">
-              <IconButton onClick={toggleMenu}>
+              <IconButton onClick={() => setIsActiveMenu(!isActiveMenu)}>
                 <MenuOutlinedIcon />
               </IconButton>
             </li>
@@ -53,8 +50,8 @@ const Header = () => {
             <div
               className={
                 isActiveMenu
-                  ? "nav_mobile d-lg-blcok"
-                  : "nav_mobile d-sm-none togglemenu"
+                  ? "nav_mobile d-none"
+                  : "(nav_mobile d-block togglemenu)"
               }
             >
               <ul className="nav_list">
@@ -62,7 +59,10 @@ const Header = () => {
                 <li>About</li>
                 <li>Contact</li>
                 <li>Cart</li>
-                <li className="nav_close" onClick={toggleMenu}>
+                <li
+                  className="nav_close"
+                  onClick={() => setIsActiveMenu(!isActiveMenu)}
+                >
                   x
                 </li>
               </ul>
@@ -204,7 +204,7 @@ const Header = () => {
                 )}
               </li>
               <li className="mobile_button d-lg-none">
-                <IconButton onClick={toggleMenu}>
+                <IconButton onClick={() => setIsActiveMenu(!isActiveMenu)}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </li>
@@ -213,28 +213,34 @@ const Header = () => {
           <div
             className={
               isActiveMenu
-                ? "nav_mobile d-lg-block"
-                : "nav_mobile d-sm-none togglemenu"
+                ? "nav_mobile d-sm-none togglemenu"
+                : "nav_mobile d-lg-block"
             }
           >
             <ul className="nav_list">
               <li>
-                <Link to="/" onClick={toggleMenu}>
+                <Link to="/" onClick={() => setIsActiveMenu(!isActiveMenu)}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/category" onClick={toggleMenu}>
+                <Link
+                  to="/category"
+                  onClick={() => setIsActiveMenu(!isActiveMenu)}
+                >
                   Category
                 </Link>
               </li>
               <li>
-                <Link to="/blog" onClick={toggleMenu}>
+                <Link to="/blog" onClick={() => setIsActiveMenu(!isActiveMenu)}>
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/contact" onClick={toggleMenu}>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsActiveMenu(!isActiveMenu)}
+                >
                   Contact
                 </Link>
               </li>
@@ -243,7 +249,10 @@ const Header = () => {
                   Log out
                 </Link>
               </li>
-              <li className="nav_close" onClick={toggleMenu}>
+              <li
+                className="nav_close"
+                onClick={() => setIsActiveMenu(!isActiveMenu)}
+              >
                 <CloseIcon />
               </li>
             </ul>

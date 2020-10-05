@@ -23,7 +23,6 @@ export const authReducers = (state = initialState, action) => {
         errorLogin: action.payload,
       };
     case REGISTER_SUCCESS:
-      console.log(action.payload);
       return {
         isAuth: false,
         data: action.payload,

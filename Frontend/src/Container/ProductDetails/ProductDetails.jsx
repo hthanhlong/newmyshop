@@ -158,172 +158,174 @@ const ProductDetails = (props) => {
           </div>
         </div>
         <div className="row relatedview">
-          <h2>Customers who viewed this item also viewed</h2>
-          <div>
-            <Slider {...settings}>
-              <div>
-                <ul>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+          <div className="d-none d-lg-block">
+            <h2>Customers who viewed this item also viewed</h2>
+            <div>
+              <Slider {...settings}>
+                <div>
+                  <ul>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="relatedview__item">
-                    <div>
-                      <img src="/assets/img/categori/product1.png" alt="" />
-                      <h3>Champion Men's Closed</h3>
-                      <span>Price: $ 80</span>
+                    </li>
+                    <li className="relatedview__item">
                       <div>
-                        <h4>Sales off: 20%</h4>
+                        <img src="/assets/img/categori/product1.png" alt="" />
+                        <h3>Champion Men's Closed</h3>
+                        <span>Price: $ 80</span>
+                        <div>
+                          <h4>Sales off: 20%</h4>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </Slider>
+                    </li>
+                  </ul>
+                </div>
+              </Slider>
+            </div>
           </div>
         </div>
       </div>

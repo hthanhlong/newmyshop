@@ -89,9 +89,9 @@ const Admin = () => {
               {!data ? (
                 <div>No data </div>
               ) : (
-                data.map((item) => (
+                data.map((item, index) => (
                   <tr key={item._id}>
-                    <th scope="row">1</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{item.firstName}</td>
                     <td>{item.lastName}</td>
                     <td>{item.address}</td>

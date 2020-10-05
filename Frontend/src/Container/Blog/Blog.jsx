@@ -213,7 +213,7 @@ const Blog = () => {
       <div className="row">
         <div className="col-12 pagination">
           <Pagination
-            count={10}
+            count={3}
             variant="outlined"
             shape="rounded"
             className="test"

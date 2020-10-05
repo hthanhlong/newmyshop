@@ -179,12 +179,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0rem 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 3px rgba($color: grey, $alpha: 0.2);
 
-  box-shadow: 0px 0px 5px rgb(201, 201, 201);
   @media #{$xs_mobile} {
-    margin: 0;
+    margin: auto;
+
+    margin-bottom: 2rem;
   }
 
   &__img {
@@ -210,6 +211,7 @@
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+
     &__star {
       color: yellow;
       .MuiIcon-root {

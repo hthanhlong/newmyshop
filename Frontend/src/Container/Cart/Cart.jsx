@@ -44,7 +44,9 @@ const Cart = () => {
                     </div>
                     <div className="cart__left-content-right">
                       <div>
-                        <h3>$ {item.newprice}</h3>
+                        <h3 className="cart__left-content-price">
+                          $ {item.newprice}
+                        </h3>
                         <div className="cart__price">
                           <h5 className="cart__price-old">$ {item.oldprice}</h5>
                           <Divider
@@ -55,7 +57,7 @@ const Cart = () => {
                           {Math.floor(
                             ((item.oldprice - item.newprice) / item.oldprice) *
                               100
-                          ) > 0 && (
+                          ) > 0 ? (
                             <h5>
                               {Math.floor(
                                 ((item.oldprice - item.newprice) /
@@ -64,6 +66,8 @@ const Cart = () => {
                               )}
                               %
                             </h5>
+                          ) : (
+                            <h5>0%</h5>
                           )}
                         </div>
                       </div>

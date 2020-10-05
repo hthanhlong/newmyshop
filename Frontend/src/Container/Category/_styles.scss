@@ -6,6 +6,9 @@
     margin: auto;
     h1 {
       margin: auto;
+      @media #{$xs_mobile} {
+        font-size: 3rem;
+      }
     }
   }
 }
