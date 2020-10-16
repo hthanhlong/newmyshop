@@ -87,26 +87,26 @@ const Header = () => {
           <div className="d-none d-lg-block col-lg-6 col-xl-6">
             <ul className="header__nav_list">
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" exact activeClassName="selected" >Home</NavLink>
               </li>
               <li>
                 <Badge badgeContent="HOT" color="secondary">
-                  <NavLink to="/category">Category</NavLink>
+                  <NavLink to="/category" exact  activeClassName="selected" >Category</NavLink>
                 </Badge>
               </li>
               <li>
-                <NavLink to="/category">Latest</NavLink>
+                <NavLink to="/lastest" exact  activeClassName="selected" >Latest</NavLink>
                 <ul className="submenu">
                   <li>
                     <NavLink to="/category">Products List</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/">Products Details</NavLink>
+                    <NavLink to="/" activeClassName="selected">Products Details</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="/">Pages</NavLink>
+                <NavLink to="/pages" activeClassName="selected">Pages</NavLink>
                 <ul className="submenu">
                   <li>
                     <NavLink to="/login">Login</NavLink>
@@ -132,10 +132,10 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <NavLink to="/blog">Blog</NavLink>
+                <NavLink to="/blog" activeClassName="selected" >Blog</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Contact</NavLink>
+                <NavLink to="/contact" activeClassName="selected" >Contact</NavLink>
               </li>
             </ul>
           </div>

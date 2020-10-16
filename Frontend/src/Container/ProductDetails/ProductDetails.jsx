@@ -11,6 +11,7 @@ import { addToCart } from "../../ActionTypes/cartAction";
 import { useDispatch } from "react-redux";
 
 const ProductDetails = (props) => {
+  
   const id = props.match.params.id;
   const [product, setProduct] = useState({});
 

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Badge, Button, Divider } from "@material-ui/core";
+import { Button, Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import StarIcon from "@material-ui/icons/Star";
-import StarHalfIcon from "@material-ui/icons/StarHalf";
 import RedeemIcon from "@material-ui/icons/Redeem";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
 import Axios from "axios";
 import { API_ROOT } from "../../Api/configAxios";
+import Product from "../../Components/Product";
 
 const Home = () => {
   const [lastesProducts, setLastesProducts] = useState([]);
@@ -121,46 +120,14 @@ const Home = () => {
           <Divider />
           <div className="row products__lists">
             {!lastesProducts ? (
-              <div>...Loading</div>
+              <div>....loading</div>
             ) : (
               lastesProducts.map((item) => (
                 <div
                   key={item.id}
                   className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
                 >
-                  <div className="product">
-                    <div className="product__img">
-                      <Badge color="secondary" badgeContent="NEW">
-                        <Link to={`/productdetails/${item.id}`}>
-                          <img src={item.photo} alt="" />
-                        </Link>
-                      </Badge>
-                    </div>
-                    <ul className="product__content">
-                      <li className="product__star">
-                        <StarIcon />
-                        <StarIcon />
-                        <StarIcon />
-                        <StarIcon />
-                        <StarHalfIcon />
-                      </li>
-                      <li className="product__title">
-                        <h2>
-                          <Link to={`/productdetails/${item.id}`}>
-                            {item.description}
-                          </Link>
-                        </h2>
-                      </li>
-                      <li className="product__price">
-                        <span className="product__price_new">
-                          ${item.newprice}
-                        </span>
-                        <span className="product__price_old">
-                          ${item.oldprice}
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
+                  <Product item={item} />
                 </div>
               ))
             )}

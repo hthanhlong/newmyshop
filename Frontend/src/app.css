@@ -992,6 +992,10 @@ a:hover {
   color: #f5790b;
 }
 
+.selected {
+  color: red !important;
+}
+
 .blog {
   margin-top: 10rem;
   width: 85%;
@@ -1798,6 +1802,10 @@ a:hover {
 
 .sort__term {
   outline: none;
+}
+
+.activeName {
+  color: blue;
 }
 
 .cart {

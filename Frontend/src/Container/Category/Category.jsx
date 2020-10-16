@@ -6,11 +6,12 @@ import { Badge } from "@material-ui/core";
 import Pagination from "@material-ui/lab/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, sortProducts } from "../../ActionTypes/productAction";
+import DataList from "./dataList";
 
 const Category = () => {
   const dispatch = useDispatch();
 
-  const [sort, setSort] = useState("");
+  const [sort, setSort] = useState(null);
   const [page, setPage] = useState(1);
 
   const result = useSelector((state) => state.products.productList);
@@ -60,24 +61,7 @@ const Category = () => {
                 </div>
                 <div className="category__left-list">
                   <ul>
-                    <li>
-                      <Link to="/category">Resaurant food (37)</Link>
-                    </li>
-                    <li>
-                      <Link to="/category">Travel news (10)</Link>
-                    </li>
-                    <li>
-                      <Link to="/category">Modern Technology (03)</Link>
-                    </li>
-                    <li>
-                      <Link to="/category">Product (12)</Link>
-                    </li>
-                    <li>
-                      <Link to="/category">Inspiration (21)</Link>
-                    </li>
-                    <li>
-                      <Link to="/category">Healthy Care (15)</Link>
-                    </li>
+                    <DataList place="category"/>
                   </ul>
                 </div>
               </div>

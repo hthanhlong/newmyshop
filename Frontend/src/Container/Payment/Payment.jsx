@@ -21,17 +21,14 @@ const Payment = (props) => {
   const listCart = useSelector((state) => state.cart.itemsList);
 
   const handlePayment = async (value) => {
-    await Axios.post(`${API_ROOT}/order/products`, {
-      ...value,
-      cart: listCart,
-    });
-
-    if (value !== "") {
-      await alert("Payment Successfully");
-
-      await setTimeout(() => {
-        history.push("/");
-      }, 200);
+    if (!value) return;
+    try {
+      const data = await Axios.post(`${API_ROOT}/order/products`, {
+        ...value,
+        cart: listCart,
+      });
+    } catch (error) {
+      console.log((err) => err.message);
     }
   };
 
@@ -91,12 +88,7 @@ const Payment = (props) => {
                     <ErrorMessage name="address" component="div" />
                   </div>
                   <div className="productdetails__button-addtocart payment_button">
-                    <Button
-                      type="submit"
-                      style={{ width: "100%" }}
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                    >
+                    <Button type="submit" style={{ width: "100%" }}>
                       Payment
                     </Button>
                   </div>
@@ -163,7 +155,6 @@ const Payment = (props) => {
           </div>
         </div>
       </div>
-      {/* Modal */}
     </div>
   );
 };

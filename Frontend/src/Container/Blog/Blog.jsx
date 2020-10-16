@@ -4,6 +4,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { Button, Divider } from "@material-ui/core";
 import Pagination from "@material-ui/lab/Pagination";
+import DataList from "../Category/dataList";
 
 const Blog = () => {
   return (
@@ -122,24 +123,7 @@ const Blog = () => {
               </div>
               <div className="right__side-two-list">
                 <ul>
-                  <li>
-                    <Link to="/blog">Resaurant food (37)</Link>
-                  </li>
-                  <li>
-                    <Link to="/blog">Travel news (10)</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Modern Technology (03)</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Product (12)</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Inspiration (21)</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Healthy Care (15)</Link>
-                  </li>
+                 <DataList place="blog" />
                 </ul>
               </div>
             </aside>
