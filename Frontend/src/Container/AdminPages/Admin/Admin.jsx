@@ -10,7 +10,7 @@ const Admin = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const a = Axios.get(`${API_ROOT}/order`)
+    Axios.get(`${API_ROOT}/order`)
       .then((res) => setData(res.data))
       .catch((err) => err.message);
   }, []);

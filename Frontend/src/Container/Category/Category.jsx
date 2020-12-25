@@ -9,8 +9,7 @@ import { getProducts, sortProducts } from "../../ActionTypes/productAction";
 import DataList from "./dataList";
 
 const Category = () => {
-  const dispatch = useDispatch();
-
+ 
   const [sort, setSort] = useState(null);
   const [page, setPage] = useState(1);
 
@@ -18,22 +17,27 @@ const Category = () => {
   const totalProducts1 = useSelector((state) => state.products.totalProducts);
   const totalPages = Math.ceil(totalProducts1 / 16);
 
-  const handleChange = async (event, value) => {
-    await setPage(value);
+  const handleChange =  (event, value) => {
+     setPage(value);
+  
   };
 
-  const handleSort = async (event) => {
+  const handleSort =  (event) => {
     const sortName = event.target.value;
-    await setSort(sortName);
+     setSort(sortName);
   };
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProducts(page));
-  }, [page]);
+  }, [dispatch, page]);
+
 
   useEffect(() => {
     dispatch(sortProducts(sort));
-  }, [sort]);
+  }, [dispatch, sort]);
+
 
   return (
     <div className="products">

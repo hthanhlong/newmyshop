@@ -9,8 +9,8 @@ import { RegisterSchema } from "../../Services/Validation";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../ActionTypes/authAction";
 
-const Register = (props) => {
-  const { history } = props;
+const Register = ({history}) => {
+  
   const User = {
     name: "",
     email: "",
@@ -24,6 +24,7 @@ const Register = (props) => {
   const { errorRegister, data } = auth;
 
   const handleOnSubmit = (values) => {
+    console.log("click submit")
     dispatch(register(values));
   };
 

@@ -20,6 +20,7 @@ export const login = (values) => async (dispatch) => {
       });
     })
     .catch((err) => {
+      console.log("err", err);
       dispatch({
         type: LOGIN_ERROR,
         payload: err.response.data,

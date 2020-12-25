@@ -43,10 +43,11 @@ class authController {
   }
 
   async login(req, res, next) {
-    const { error } = await schemaLogin.validate({
+    const { error } = schemaLogin.validate({
       email: req.body.email,
       password: req.body.password,
     });
+
     if (error) return res.status(400).send(error.details[0].message);
     // Check User is already in Database
     const user = await User.findOne({ email: req.body.email });
@@ -56,9 +57,13 @@ class authController {
     if (!validPass) return res.status(400).send("Invalid password");
     // Create and assign a token
 
-    const token = jwt.sign({ _id: user.id }, process.env.TOKEN_SECRET, {
-      expiresIn: "48h",
-    });
+    const token = jwt.sign(
+      { _id: user.id },
+      process.env.TOKEN_SECRET || "somethinghere",
+      {
+        expiresIn: "48h",
+      }
+    );
 
     const userInfo = {
       name: user.name,

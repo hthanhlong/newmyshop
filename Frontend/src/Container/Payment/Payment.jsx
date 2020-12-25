@@ -7,8 +7,7 @@ import { Order } from "../../Services/Validation";
 import Axios from "axios";
 import { API_ROOT } from "../../Api/configAxios";
 
-const Payment = (props) => {
-  const { history } = props;
+const Payment = () => {
 
   const yourOrder = {
     firstName: "",
@@ -23,7 +22,7 @@ const Payment = (props) => {
   const handlePayment = async (value) => {
     if (!value) return;
     try {
-      const data = await Axios.post(`${API_ROOT}/order/products`, {
+       await Axios.post(`${API_ROOT}/order/products`, {
         ...value,
         cart: listCart,
       });

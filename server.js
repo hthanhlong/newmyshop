@@ -14,7 +14,7 @@ app.use(express.json());
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb+srv://thanhlong123:thanhlong@cluster0.6vknj.mongodb.net/thanhlong123?retryWrites=true&w=majority ",
+    "mongodb+srv://thanhlong123:thanhlong@cluster0.6vknj.mongodb.net/thanhlong123?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,13 +24,13 @@ mongoose.connect(
   () => console.log("connected MongoDB")
 );
 
-https.createServer(
-  {
-    key: fs.readFileSync("server.key"),
-    cert: fs.readFileSync("server.cert"),
-  },
-  app
-);
+// https.createServer(
+//   {
+//     key: fs.readFileSync("server.key"),
+//     cert: fs.readFileSync("server.cert"),
+//   },
+//   app
+// );
 
 const route = require("./routers/index");
 
