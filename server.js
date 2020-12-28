@@ -1,43 +1,22 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 const path = require("path");
-const https = require("https");
-const fs = require("fs");
+const configDB = require("./configs/connectDB");
+const route = require("./routes/index");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
 
-dotenv.config();
 app.use(express.json());
-
-mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb+srv://thanhlong123:thanhlong@cluster0.6vknj.mongodb.net/thanhlong123?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  },
-  () => console.log("connected MongoDB")
-);
-
-// https.createServer(
-//   {
-//     key: fs.readFileSync("server.key"),
-//     cert: fs.readFileSync("server.cert"),
-//   },
-//   app
-// );
-
-const route = require("./routers/index");
-
 app.use(cors());
+//  Connect database---------
 
+configDB();
+//
+// config router ----------
 route(app);
-
+// Enviroment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("Frontend/build/"));
 
@@ -45,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "Frontend", "build", "index.html"));
   });
 }
-
+/// check PORT
 app.listen(PORT, () => {
   console.log(`Example app listening at https://localhost:${PORT}`);
 });
