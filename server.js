@@ -28,3 +28,5 @@ if (process.env.NODE_ENV === "production") {
 app.listen(PORT, () => {
   console.log(`Example app listening at https://localhost:${PORT}`);
 });
+
+// node -r dotenv/config server.js // to fix process.env
