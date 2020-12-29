@@ -1,4 +1,4 @@
-module.exports.protect = async (req, res, next) => {
+async function protect(req, res, next) {
   let token; // token chứa {user_Id}
   if (
     req.headers.authorization &&
@@ -23,4 +23,6 @@ module.exports.protect = async (req, res, next) => {
     res.status(401);
     throw new Error("Not authorized, no token");
   }
-};
+}
+
+module.exports = protect;

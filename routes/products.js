@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const productController = require("../controller/productController");
 
-router.get("/", productController.pagination);
+router.get("/", productController.pagination); // get products
 
 router.get("/search", productController.searchField);
 
-router.get("/:id", productController.getProduct);
+router.get("/:id", productController.getProduct); // get product details
 
 // router.post() /// check token and check role
 
