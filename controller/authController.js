@@ -68,7 +68,7 @@ class authController {
   async activeAccount(req, res) {
     const { token } = req.body;
 
-    if (!token && _.isString(token) === false)
+    if (!token || _.isString(token) === false)
       return res.status(401).send("Invalid token");
     //
     const data = jwt.decode(token, process.env.TOKEN_SECRET);
