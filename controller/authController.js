@@ -1,5 +1,5 @@
 const mailgun = require("mailgun-js");
-const User = require("../model/User");
+const User = require("../models/User");
 const Joi = require("joi");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");

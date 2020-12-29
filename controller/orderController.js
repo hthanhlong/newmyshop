@@ -1,5 +1,5 @@
 const data = require("../MOCK_DATA.json");
-const Order = require("../model/Order");
+const Order = require("../models/Order");
 
 class OrderController {
   async getProduct(req, res, next) {
@@ -23,8 +23,8 @@ class OrderController {
     });
 
     try {
-      const saveOrder = await order.save();
-      res.send("Create order success");
+      await order.save();
+      res.status(201).send("Create order success");
     } catch (error) {
       res.status(400).send(error);
     }
