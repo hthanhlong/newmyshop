@@ -9,22 +9,22 @@ import { LoginSchema } from "../../Services/Validation";
 import { login } from "../../ActionTypes/authAction";
 import { useDispatch, useSelector } from "react-redux";
 
-const Login = (props) => {
-  const { history } = props;
+const Login = ({ history }) => {
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
-  const { user, errorLogin } = auth;
+
+  const { isAuth, error } = auth;
 
   const handleSubmit = (values) => {
     dispatch(login(values));
   };
 
   useEffect(() => {
-    if (user) {
+    if (isAuth) {
       history.push("/");
     }
-  }, [user, history]);
+  }, [isAuth, history]);
 
   return (
     <div className="background">
@@ -65,16 +65,13 @@ const Login = (props) => {
               component="div"
               className="error__message"
             />
-            {errorLogin && (
-              <div className="error__message_spec">{errorLogin}</div>
-            )}
+            {error && <div className="error__message_spec">{error}</div>}
             <div className="loginform__group">
               <div className="loginform__group_checkbox  checkbox">
                 <input id="checkbox" name="checkbox" type="checkbox" />
                 <label htmlFor="checkbox">Remember me</label>
               </div>
             </div>
-
             <Button type="submit">Login</Button>
           </Form>
         </Formik>

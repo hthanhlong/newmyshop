@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -8,37 +8,41 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { RegisterSchema } from "../../Services/Validation";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../ActionTypes/authAction";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-const Register = ({history}) => {
-  
-  const User = {
+const Register = ({ history }) => {
+  const user = {
     name: "",
     email: "",
     password: "",
   };
-
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
 
-  const { errorRegister, data } = auth;
+  const {
+    isLogin,
+    data: { message },
+  } = auth;
 
   const handleOnSubmit = (values) => {
-    console.log("click submit")
     dispatch(register(values));
   };
 
-  useEffect(() => {
-    if (data) {
-      history.push("/login");
+  React.useEffect(() => {
+    if (isLogin) {
+      setTimeout(() => {
+        history.push("/login");
+      }, 3000);
     }
-  }, [data, history]);
+
+  }, [isLogin, history]);
 
   return (
     <div className="background__register">
       <div className="row register">
         <Formik
-          initialValues={User}
+          initialValues={user}
           validationSchema={RegisterSchema}
           onSubmit={handleOnSubmit}
         >
@@ -84,9 +88,16 @@ const Register = ({history}) => {
               component="div"
               className="error__message"
             />
-            {errorRegister && (
-              <div className="error__message_special">{errorRegister}</div>
-            )}
+
+            {message ? (
+              <div className="error__message_special">
+                <div>
+                 {message === "Register success" && (<CircularProgress color="secondary" />)}
+                </div>
+                <div>{message}</div>
+              </div>
+            ) : null}
+
             <div className="register__button">
               <Button type="submit">Register</Button>
             </div>

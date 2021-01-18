@@ -28,9 +28,10 @@ const Header = () => {
     setIsActiveMenu(!isActiveMenu);
   };
 
-  const handleLogOut = async () => {
-    await dispatch(logout());
+  const handleLogOut = () => {
+    dispatch(logout());
   };
+
   if (isAuth === false) {
     return (
       <Paper elevation={3}>
@@ -87,26 +88,36 @@ const Header = () => {
           <div className="d-none d-lg-block col-lg-6 col-xl-6">
             <ul className="header__nav_list">
               <li>
-                <NavLink to="/" exact activeClassName="selected" >Home</NavLink>
+                <NavLink to="/" exact activeClassName="selected">
+                  Home
+                </NavLink>
               </li>
               <li>
                 <Badge badgeContent="HOT" color="secondary">
-                  <NavLink to="/category" exact  activeClassName="selected" >Category</NavLink>
+                  <NavLink to="/category" exact activeClassName="selected">
+                    Category
+                  </NavLink>
                 </Badge>
               </li>
               <li>
-                <NavLink to="/lastest" exact  activeClassName="selected" >Latest</NavLink>
+                <NavLink to="/lastest" exact activeClassName="selected">
+                  Latest
+                </NavLink>
                 <ul className="submenu">
                   <li>
                     <NavLink to="/category">Products List</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/" activeClassName="selected">Products Details</NavLink>
+                    <NavLink to="/" activeClassName="selected">
+                      Products Details
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="/pages" activeClassName="selected">Pages</NavLink>
+                <NavLink to="/pages" activeClassName="selected">
+                  Pages
+                </NavLink>
                 <ul className="submenu">
                   <li>
                     <NavLink to="/login">Login</NavLink>
@@ -132,10 +143,14 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <NavLink to="/blog" activeClassName="selected" >Blog</NavLink>
+                <NavLink to="/blog" activeClassName="selected">
+                  Blog
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" activeClassName="selected" >Contact</NavLink>
+                <NavLink to="/contact" activeClassName="selected">
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </div>

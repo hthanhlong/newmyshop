@@ -7,9 +7,7 @@ export const addToCart = (product, qty) => async (dispatch) => {
       type: ADD_TO_CART,
       payload: dataProduct,
     });
-  } catch (error) {
-    console.log(error.message);
-  }
+  } catch (error) {}
 };
 
 export const removeFromCart = (product) => async (dispatch) => {
@@ -18,7 +16,5 @@ export const removeFromCart = (product) => async (dispatch) => {
       type: REMOVE_FROM_CART,
       payload: product,
     });
-  } catch (error) {
-    console.log(error.message);
-  }
+  } catch (error) {}
 };

@@ -11,7 +11,7 @@ import {
 
 //////
 export const login = (values) => async (dispatch) => {
-  await Axios.post(`${API_ROOT}/api/login`, values)
+  await Axios.post(`${API_ROOT}/api/auth/login`, values)
     .then((res) => {
       localStorage.setItem("Token", JSON.stringify(res.data.token));
       dispatch({
@@ -20,7 +20,6 @@ export const login = (values) => async (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log("err", err);
       dispatch({
         type: LOGIN_ERROR,
         payload: err.response.data,
@@ -29,7 +28,7 @@ export const login = (values) => async (dispatch) => {
 };
 
 export const register = (values) => async (dispatch) => {
-  await Axios.post(`${API_ROOT}/api/register`, values)
+  await Axios.post(`${API_ROOT}/api/auth/register`, values)
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,

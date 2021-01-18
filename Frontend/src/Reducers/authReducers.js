@@ -7,7 +7,11 @@ import {
 } from "../constant";
 
 const initialState = {
+  isLogin: false,
   isAuth: false,
+  user: {},
+  data: {},
+  error: "",
 };
 
 export const authReducers = (state = initialState, action) => {
@@ -20,17 +24,19 @@ export const authReducers = (state = initialState, action) => {
     case LOGIN_ERROR:
       return {
         isAuth: false,
-        errorLogin: action.payload,
+        error: action.payload,
       };
     case REGISTER_SUCCESS:
       return {
+        isLogin: true,
         isAuth: false,
         data: action.payload,
       };
     case REGISTER_ERROR:
       return {
+        isLogin: false,
         isAuth: false,
-        errorRegister: action.payload,
+        data: action.payload,
       };
     case LOG_OUT:
       localStorage.removeItem("Token");

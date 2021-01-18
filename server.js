@@ -16,7 +16,7 @@ configDB();
 //
 // config router ----------
 route(app);
-// Enviroment
+// set Enviroment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("Frontend/build/"));
 
