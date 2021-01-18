@@ -9,7 +9,7 @@ import {
 } from "../constant";
 
 export const getProducts = (value) => async (dispatch) => {
-  await Axios.get(`${API_ROOT}/products/?page=${value}&limit=16`)
+  await Axios.get(`${API_ROOT}/api/products/?page=${value}&limit=16`)
     .then((res) => {
       dispatch({
         type: FETCH_SUCCESS,

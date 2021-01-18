@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async () => {
-      await Axios.get(`${API_ROOT}/products/?page=1&limit=8`)
+      await Axios.get(`${API_ROOT}/api/products/?page=1&limit=8`)
         .then((res) => {
           setLastesProducts(res.data.result);
         })

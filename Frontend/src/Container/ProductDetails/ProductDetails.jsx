@@ -22,7 +22,7 @@ const ProductDetails = (props) => {
   );
   useEffect(() => {
     const getProduct = async () => {
-      await Axios.get(`${API_ROOT}/products/${id}`)
+      await Axios.get(`${API_ROOT}/api/products/${id}`)
         .then((res) => {
           setProduct(res.data);
         })
