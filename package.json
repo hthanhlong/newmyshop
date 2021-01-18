@@ -24,7 +24,8 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "start": "node -r dotenv/config server.js",
+    "start": "node server.js",
+    "dev": "node -r dotenv/config server.js",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "heroku-postbuild": "cd Frontend && npm install && npm run build"
   },
