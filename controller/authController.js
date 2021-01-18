@@ -98,7 +98,7 @@ class authController {
 
     const match = await bcrypt.compare(req.body.password, user.password);
 
-    if (!match) return res.status(400).send("Password is not valid");
+    if (!match) return res.status(400).send("Incorrect password");
 
     // // Create and assign a token
 

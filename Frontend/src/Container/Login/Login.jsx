@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button } from "@material-ui/core";
+import { Box, Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockIcon from "@material-ui/icons/Lock";
@@ -8,6 +8,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { LoginSchema } from "../../Services/Validation";
 import { login } from "../../ActionTypes/authAction";
 import { useDispatch, useSelector } from "react-redux";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Login = ({ history }) => {
   const dispatch = useDispatch();
@@ -65,13 +66,23 @@ const Login = ({ history }) => {
               component="div"
               className="error__message"
             />
-            {error && <div className="error__message_spec">{error}</div>}
-            <div className="loginform__group">
-              <div className="loginform__group_checkbox  checkbox">
-                <input id="checkbox" name="checkbox" type="checkbox" />
-                <label htmlFor="checkbox">Remember me</label>
-              </div>
-            </div>
+            <Box py={2}>
+              {error && (
+                <div className="error__message_spec">
+                  <Typography color="secondary">{error}</Typography>
+                </div>
+              )}
+
+              {isAuth && (
+                <div className="error__message_spec">
+                  <div>
+                    <CircularProgress />
+                  </div>
+                  <Typography color="secondary">Login Success</Typography>
+                </div>
+              )}
+            </Box>
+
             <Button type="submit">Login</Button>
           </Form>
         </Formik>

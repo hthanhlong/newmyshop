@@ -21,9 +21,11 @@ const Register = ({ history }) => {
   const auth = useSelector((state) => state.auth);
 
   const {
-    isLogin,
-    data: { message },
+    isLogin   
   } = auth;
+
+  const messgaeCheck = auth?.data?.message
+
 
   const handleOnSubmit = (values) => {
     dispatch(register(values));
@@ -89,12 +91,12 @@ const Register = ({ history }) => {
               className="error__message"
             />
 
-            {message ? (
+            {messgaeCheck ? (
               <div className="error__message_special">
                 <div>
-                 {message === "Register success" && (<CircularProgress color="secondary" />)}
+                 {messgaeCheck === "Register success" && (<CircularProgress color="secondary" />)}
                 </div>
-                <div>{message}</div>
+                <div>{messgaeCheck}</div>
               </div>
             ) : null}
 
